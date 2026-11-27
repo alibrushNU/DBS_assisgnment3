@@ -1,0 +1,23 @@
+# Free resources only. Review both Free plans before manually deploying the Blueprint.
+services:
+  - type: web
+    name: csci341-assignment3-api
+    runtime: docker
+    plan: free
+    region: frankfurt
+    dockerfilePath: ./Dockerfile
+    autoDeployTrigger: "off"
+    healthCheckPath: /health
+    envVars:
+      - key: DATABASE_URL
+        fromDatabase:
+          name: csci341-assignment3-postgres
+          property: connectionString
+databases:
+  - name: csci341-assignment3-postgres
+    databaseName: csci341_assignment3
+    user: csci341_app
+    postgresMajorVersion: "16"
+    plan: free
+    region: frankfurt
+    ipAllowList: []

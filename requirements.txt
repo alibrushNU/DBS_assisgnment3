@@ -1,0 +1,4 @@
+-r requirements-web.txt
+pytest==9.2.0
+httpx2==2.16.2
+python-dotenv==1.2.4
