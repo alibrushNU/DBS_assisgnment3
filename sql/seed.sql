@@ -76,7 +76,6 @@ INSERT INTO review (review_id, paper_id, reviewer_id, overall_score, recommendat
  (9, 9, 2, 2, 'reject', 'Compression comparisons need improvement.', NULL, '2026-10-13'),
  (10, 10, 2, 3, 'accept', 'Useful measurements; expand the discussion.', NULL, '2026-10-14');
 
--- Explicit IDs make the fixture stable; advance each identity for future inserts.
 SELECT setval(pg_get_serial_sequence('app_user', 'user_id'), 10, true);
 SELECT setval(pg_get_serial_sequence('conference', 'conference_id'), 3, true);
 SELECT setval(pg_get_serial_sequence('track', 'track_id'), 3, true);
